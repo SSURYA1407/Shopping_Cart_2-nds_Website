@@ -1,0 +1,532 @@
+carousel-image {
+    height: 300px; /* Adjust this to the height you want */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.carousel-container {
+    width: 80%; /* Adjust the width as desired */
+}
+
+.carousel-image {
+    position:relative;
+    z-index: -1;
+    height: 700px;
+    object-fit: cover;
+}
+
+.home_content {
+    gap: 20px; /* Adds space between product cards */
+}
+/* Overall Page Layout */
+body {
+    background-color: #ffffff; /* Crisp white background for the whole page */
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 70pt;
+    transition: all 0.3s ease;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    padding: 10px;
+    background: #f9f9f9; /* Light background */
+    border-radius: 40px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.search-bar input {
+    width: 70%;
+    padding: 14px 25px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+    background: #ffffff;
+    color: #333;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif; /* Trendy font */
+}
+
+.search-bar input::placeholder {
+    color: #aaa; /* Light placeholder text */
+}
+
+.search-bar input:focus {
+    border-color: #00bcd4; /* Accent color for focus */
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.2); /* Focus shadow */
+    transform: scale(1.02); /* Slight zoom effect */
+}
+
+/* Card Layout for Products */
+.home_content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.product_card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow on cards */
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+}
+
+.product_card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Card Image */
+.product_card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    background-color: #75430b; /* Soft blue accent */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #fcfdfe; /* Darker shade of blue on hover */
+}
+
+.modal-content {
+  border-radius: 8px;
+}
+.modal-header, .modal-footer {
+  border: none;
+}
+
+/* In your CSS file, e.g., App.css */
+/* Modal Overlay */
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Soft dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 10px;
+}
+
+/* Modal Content */
+.modal_content {
+    background: #fffbea; /* Light yellow background */
+    padding: 15px; /* Reduced padding for cleaner look */
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Softer shadow */
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: scale(1.03); /* Slight zoom effect */
+}
+
+/* Modal Input Fields */
+.modal_content input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Light inner shadow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal_content input:focus {
+    border-color: #d40012; /* Accent color */
+    box-shadow: 0 3px 8px rgba(0, 188, 212, 0.2); /* Stronger shadow on focus */
+}
+
+/* Modal Submit and Close Buttons */
+ .modal_content button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+    background-color: #00bcd4;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}  
+
+.modal_content button:hover {
+    background-color: #16cac4;
+    transform: scale(1.02);
+}
+
+/* Close Button (added) */
+.modal_content .close_button {
+    width: auto;
+    padding: 5px 15px;
+    font-size: 14px;
+    background-color: #ff5722; /* Red for close button */
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+.modal_content .close_button:hover {
+    background-color: #e64a19;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .modal_content {
+        padding: 12px;
+        max-width: 85%;
+    }
+
+    .modal_content button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .modal_content .close_button {
+        font-size: 12px;
+        padding: 4px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal_content {
+        padding: 10px;
+        max-width: 95%;
+    }
+
+    .modal_content input {
+        font-size: 14px;
+    }
+
+    .modal_content button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .modal_content .close_button {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+}
+
+
+/* Make the wishlist button responsive */
+.wishlist-btn {
+    background-color: #ff4081;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wishlist-btn:hover {
+    background-color: #f50057;
+}
+
+.wishlist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.wishlist-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .wishlist-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Add styles for the modal */
+.modal-body {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+
+.wishlist-icon {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}  
+
+.heart-icon {
+    font-size: 1.5rem;
+    color: #ccc;
+   
+}
+
+.heart-icon.filled {
+    color: red;
+}
+
+.wishlist-btn {
+    background-color: #f8c342;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.wishlist-btn:hover {
+    background-color: #f1a800;
+}
+
+.product_card {
+    position: relative; /* Enable positioning for child elements */
+    /* Other existing styles */
+}
+
+.wishlist-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.heart-icon {
+    font-size: 1rem;
+    color: #190644;
+}
+
+.heart-icon.filled {
+    color: red;
+}
+
+
+
+/* Header Icon Alignment */
+.nav_menu {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between icons */
+}
+
+.header-icon {
+    font-size: 1.5rem;
+    color: #f8fafb; /* Heart icon color */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+
+}
+
+
+
+
+
+.cart_icon {
+    position: relative;
+    display: flex;
+    align-items:center;
+    cursor: pointer;
+    
+}
+
+.cart_icon img {
+    width: 20px; /* Set appropriate icon size */
+    height: 20px;
+}
+
+
+
+
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #e8e5e3;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+
+/* Side Menu */
+/* Animated Sidenav */
+.side-menu {
+    position:fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.side-menu.open {
+    transform: translateX(0); /* Slide in */
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu li {
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s ease;
+}
+
+.side-menu li:hover {
+    background-color: #444;
+}
+
+/* Overlay when side menu is open */
+.side-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+.side-menu-overlay.open {
+    display: block;
+}
+.menu-icon {
+    cursor: pointer; /* Pointer on hover */
+    display: flex;   /* Flexbox for centering */
+    justify-content: center; /* Horizontal centering */
+    align-items: center;     /* Vertical centering */
+    height: 40px; /* Optional: Set height */
+    width: 40px;  /* Optional: Set width for better centering */
+}
+.wishlist-item {
+    
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.wishlist-item img {
+   
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.wishlist-details {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.remove-wishlist-item {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.remove-wishlist-item:hover {
+    background-color: #b90b0b;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #09032a11;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #f5e2e2;
+}
+
+.dropdown-content a:hover {
+    background-color:rgb(77, 23, 104);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn:focus + .dropdown-content {
+    display: block;
+}
