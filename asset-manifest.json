@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Shopping_Cart_2-nds_Website/static/css/main.2859654a.css",
+    "main.js": "/Shopping_Cart_2-nds_Website/static/js/main.367408cc.js",
+    "index.html": "/Shopping_Cart_2-nds_Website/index.html",
+    "main.2859654a.css.map": "/Shopping_Cart_2-nds_Website/static/css/main.2859654a.css.map",
+    "main.367408cc.js.map": "/Shopping_Cart_2-nds_Website/static/js/main.367408cc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2859654a.css",
+    "static/js/main.367408cc.js"
+  ]
+}
